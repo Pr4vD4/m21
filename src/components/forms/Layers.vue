@@ -2,13 +2,13 @@
   <div>
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">kolvo</label>
-      <input type="text" v-model="amountOfLayers" />
+      <input type="number" v-model="amountOfLayers" />
     </div>
     <span v-for="n in +amountOfLayers" :key="n">{{ n }}</span>
   </div>
   <div class="d-felx">
     <div class="layers">
-      <layer v-for="i in +amountOfLayers" :key="i" />
+      <layer v-for="i in +amountOfLayers" :key="i" :amount-of-layers="[amountOfLayers]" />
     </div>
   </div>
 </template>
@@ -23,6 +23,7 @@ export default {
       amountOfLayers: "",
     };
   },
+
 };
 </script>
 
